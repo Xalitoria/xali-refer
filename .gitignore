@@ -1,0 +1,7 @@
+# Project exclude paths
+/.gradle/
+/build/
+/spigot/build/
+/velocity/.gradle/
+/velocity/build/
+/velocity/build/classes/kotlin/main/

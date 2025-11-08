@@ -1,0 +1,26 @@
+[versions]
+kotlin = "2.2.0"
+
+configurate = "4.2.0"
+minecraft = "1.21.8-R0.1-SNAPSHOT"
+
+[plugins]
+kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+shadow = { id = "com.gradleup.shadow", version = "8.3.3" }
+pluginyml = { id = "net.minecrell.plugin-yml.bukkit", version = "0.6.0" }
+
+[libraries]
+kotlin = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
+kotlin-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm", version = "1.10.1" }
+spigot = { module = "org.spigotmc:spigot-api", version.ref = "minecraft" }
+velocity = { module = "com.velocitypowered:velocity-api", version = "3.4.0+" }
+
+configurate-core = { module = "org.spongepowered:configurate-core", version.ref = "configurate" }
+configurate-kotlin = { module = "org.spongepowered:configurate-extra-kotlin", version.ref = "configurate" }
+configurate-yaml = { module = "org.spongepowered:configurate-yaml", version.ref = "configurate" }
+
+cmiapi = { module = "com.github.Zrips:CMI-API", version = "9.7+" }
+luckperms = { module = "net.luckperms:api", version = "5.5" }
+placeholderapi = { module = "me.clip:placeholderapi", version = "2.11.6" }
+textcolor = { module = "dev.idot:textcolor", version = "0.1" }
+

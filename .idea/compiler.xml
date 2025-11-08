@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel target="1.6">
+      <module name="ProxyCommander" target="21" />
+      <module name="ProxyCommander.main" target="21" />
+      <module name="ProxyCommander.spigot" target="21" />
+      <module name="ProxyCommander.spigot.main" target="21" />
+      <module name="ProxyCommander.spigot.test" target="21" />
+      <module name="ProxyCommander.test" target="21" />
+      <module name="ProxyCommander.velocity" target="17" />
+      <module name="ProxyCommander.velocity.main" target="17" />
+      <module name="ProxyCommander.velocity.test" target="17" />
+      <module name="XaliRefer.main" target="21" />
+      <module name="XaliRefer.test" target="21" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

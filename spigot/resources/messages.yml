@@ -1,0 +1,64 @@
+# Placeholders: {prefix} {refer_name} {refer_uuid}
+
+prefix: '{#80f>}&lXALI{#88f<}&f&lREFER &7>'
+# ip: "&b{refer_name}&f.xalitoria.com"
+info: |-
+  &dInfo: &f%xrefer_ip%
+  &dCount: &f%xrefer_count%
+  &dPlaytime: &f%xrefer_playtime%/2 hours
+join: '{prefix} You have joined with %xrefer_refer_name%''s referral!'
+
+playtime:
+  format: '{d}{h}{m}{s}'
+  days: '{} days '
+  day: '{} day '
+  hours: '{} hours '
+  hour: '{} hour '
+  minutes: '{} minutes '
+  minute: '{} minute '
+  seconds: '{} seconds '
+  second: '{} second '
+
+admin:
+  raffle:
+    winner: "{prefix} &bThe winner of the raffle is: &d{}&b!"
+  give: '{prefix} &bYou have given &f{amount} &breferral points to &f{refer_name}.
+    &3Total: &f%xrefer_count%'
+  take: '{prefix} &bYou have taken &f{amount} &breferral points to &f{refer_name}.
+    &3Total: &f%xrefer_count%'
+
+  # Placeholders: {page} {page_max} {refer_playtime} {status}
+  list:
+    header: '{prefix} LIST &b&m                                        &f {page}&b/&f{page_max}'
+    element: '  {refer_name} - {status}'
+    footer: '&b&m                                                                        &r'
+    status:
+      in-progress: '&7{refer_playtime}'
+      done: '&aDone'
+  reload:
+    start: '{prefix} &bReloading...'
+    finish: '{prefix} &aReloaded!'
+  save:
+    referral:
+      start: '{prefix} &bSaving all referral data...'
+      finish: '{prefix} &aSaved all referral data!'
+    playtime:
+      start: '{prefix} &bSaving all playtime data...'
+      finish: '{prefix} &aSaved all playtime data!'
+    all:
+      start: '{prefix} &bSaving all data...'
+      finish: '{prefix} &aSaved all data!'
+  debug:
+    enabled: '{prefix} &aDebugger Enabled!'
+    disabled: '{prefix} &cDebugger Disabled!'
+error:
+  no-permission-command: '{prefix} &cYou don''t have permission to use this command.'
+  not-a-player: '{prefix} &cNot a player: {}'
+  specify-player: '{prefix} &cSpecify a player! Usage: {}'
+  not-a-number: '{prefix} &cNot a number: {}'
+  specify-number: '{prefix} &cSpecify a number! Usage: {}'
+  no-winner: '{prefix} &cNo winners eligible for the raffle.'
+  self-refer: |-
+    &c&lYou can't use your own referral!
+    You can't use your own referral!
+    You can't use your own referral!

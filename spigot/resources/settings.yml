@@ -1,0 +1,10 @@
+ip-search: xalitoria.com
+
+afk-threshold: 30s
+
+playtime-requirement: 2h
+
+completion:
+- "refer add {referrer} 1"
+- "refer message {referrer} {prefix} {#mc_red>}{player}{#white<} &ahas redeemed your referral!"
+- "refer message {player} {prefix} &aYou have redeemed {#mc_red>}{referrer}'s{#white<} &areferral!"

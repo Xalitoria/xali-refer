@@ -1,65 +1,20 @@
-import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
+import mc.xalitoria.gradle.sibling
 
 plugins {
-    alias(libs.plugins.kotlin)
     alias(libs.plugins.shadow)
-    //id("xyz.jpenilla.run-velocity") version "2.3.1"
 }
 
-group = "com.xalitoria"
-version = "0.0.1"
-
-repositories {
-    mavenCentral()
-    mavenLocal()
-    maven("https://repo.papermc.io/repository/maven-public/") {
-        name = "papermc-repo"
-    }
-    maven("https://oss.sonatype.org/content/groups/public/") {
-        name = "sonatype"
-    }
-}
-
+// Declared with api, so the proxy downloads the Kotlin runtime when the plugin loads (Velocity has none) and the
+// plugin gets a loader class; without a library the plugin would have to be a Velocity plugin class itself.
 dependencies {
-    compileOnly(libs.velocity)
-    compileOnly(libs.luckperms)
-    //kapt("com.velocitypowered:velocity-api:3.4.0-SNAPSHOT")
-    implementation(libs.kotlin)
-}
-
-val targetJavaVersion = 17
-kotlin {
-    sourceSets {
-        main {
-            kotlin.srcDirs("kotlin")
-            resources.srcDirs("resources")
-        }
-    }
-    jvmToolchain(targetJavaVersion)
+    implementation(sibling("common"))
+    api("org.jetbrains.kotlin:kotlin-stdlib:${libs.versions.kotlin.get()}")
+    compileOnly(libs.velocity.api)
 }
 
 tasks {
     jar { enabled = false }
-    val shadowJar = named<ShadowJar>("shadowJar") {
-        archiveClassifier = ""
-        dependsOn(":shadowJar")
-    }
     build {
         dependsOn(shadowJar)
-    }
-    processResources {
-        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-        val props = mapOf(
-            "name" to rootProject.name,
-            "id" to rootProject.name.lowercase(),
-            "version" to rootProject.version.toString(),
-            "description" to rootProject.property("velocity.description"),
-            "authors" to rootProject.property("author").toString()
-        )
-        inputs.properties(props)
-        filteringCharset = "UTF-8"
-        filesMatching("velocity-plugin.json") {
-            expand(props)
-        }
     }
 }
